@@ -1,0 +1,34 @@
+body {
+  margin: 20px 20px 20px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.page_container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 760px;
+  text-align: left;
+  background-color: white;
+}
+
+.hcontainer {
+  width: 760px;
+  text-align: left;
+  border: 1px solid green;
+  float: left;
+}
+
+.header_text {
+  color: black;
+  font-size: 16;
+  font-weight: bold;
+  float: left;
+}
+
+.login_link {
+  color: black;
+  font-size: 14;
+  text-align: right;
+  float: right;
+}

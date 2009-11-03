@@ -1,0 +1,20 @@
+body {
+  background-color: white;
+}
+
+.page_container {
+  background-color: white;
+  display: table;
+  border-spacing: 5px;
+  border-collapse: separate;
+  width: 650px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 30;
+  color: #474747;
+  border: 1px solid red;
+}
+
+
