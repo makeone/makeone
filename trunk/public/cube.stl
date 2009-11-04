@@ -1,0 +1,170 @@
+solid "Cube_1"; Produced by Art of Illusion 2.6.1, Tue Nov 03 21:01:31 EST 2009
+facet normal  0 -1 0
+  outer loop
+    vertex  3.34 0 3.28
+    vertex  0 0 3.28
+    vertex  1.67 0 1.64
+  endloop
+endfacet
+facet normal  0 -1 0
+  outer loop
+    vertex  3.34 0 0
+    vertex  3.34 0 3.28
+    vertex  1.67 0 1.64
+  endloop
+endfacet
+facet normal  0 -1 0
+  outer loop
+    vertex  0 0 0
+    vertex  3.34 0 0
+    vertex  1.67 0 1.64
+  endloop
+endfacet
+facet normal  0 -1 0
+  outer loop
+    vertex  0 0 3.28
+    vertex  0 0 0
+    vertex  1.67 0 1.64
+  endloop
+endfacet
+facet normal  1 0 0
+  outer loop
+    vertex  3.34 0 3.28
+    vertex  3.34 0 0
+    vertex  3.34 1.64 1.64
+  endloop
+endfacet
+facet normal  1 0 0
+  outer loop
+    vertex  3.34 0 0
+    vertex  3.34 3.28 0
+    vertex  3.34 1.64 1.64
+  endloop
+endfacet
+facet normal  1 0 0
+  outer loop
+    vertex  3.34 3.28 0
+    vertex  3.34 3.28 3.28
+    vertex  3.34 1.64 1.64
+  endloop
+endfacet
+facet normal  1 0 0
+  outer loop
+    vertex  3.34 3.28 3.28
+    vertex  3.34 0 3.28
+    vertex  3.34 1.64 1.64
+  endloop
+endfacet
+facet normal  0 0 1
+  outer loop
+    vertex  0 0 3.28
+    vertex  3.34 0 3.28
+    vertex  1.67 1.64 3.28
+  endloop
+endfacet
+facet normal  0 0 1
+  outer loop
+    vertex  3.34 0 3.28
+    vertex  3.34 3.28 3.28
+    vertex  1.67 1.64 3.28
+  endloop
+endfacet
+facet normal  0 0 1
+  outer loop
+    vertex  3.34 3.28 3.28
+    vertex  0 3.28 3.28
+    vertex  1.67 1.64 3.28
+  endloop
+endfacet
+facet normal  0 0 1
+  outer loop
+    vertex  0 3.28 3.28
+    vertex  0 0 3.28
+    vertex  1.67 1.64 3.28
+  endloop
+endfacet
+facet normal  -1 0 0
+  outer loop
+    vertex  0 0 0
+    vertex  0 0 3.28
+    vertex  0 1.64 1.64
+  endloop
+endfacet
+facet normal  -1 0 0
+  outer loop
+    vertex  0 0 3.28
+    vertex  0 3.28 3.28
+    vertex  0 1.64 1.64
+  endloop
+endfacet
+facet normal  -1 0 0
+  outer loop
+    vertex  0 3.28 3.28
+    vertex  0 3.28 0
+    vertex  0 1.64 1.64
+  endloop
+endfacet
+facet normal  -1 0 0
+  outer loop
+    vertex  0 3.28 0
+    vertex  0 0 0
+    vertex  0 1.64 1.64
+  endloop
+endfacet
+facet normal  0 1 0
+  outer loop
+    vertex  0 3.28 3.28
+    vertex  3.34 3.28 3.28
+    vertex  1.67 3.28 1.64
+  endloop
+endfacet
+facet normal  0 1 0
+  outer loop
+    vertex  3.34 3.28 3.28
+    vertex  3.34 3.28 0
+    vertex  1.67 3.28 1.64
+  endloop
+endfacet
+facet normal  0 1 0
+  outer loop
+    vertex  3.34 3.28 0
+    vertex  0 3.28 0
+    vertex  1.67 3.28 1.64
+  endloop
+endfacet
+facet normal  0 1 0
+  outer loop
+    vertex  0 3.28 0
+    vertex  0 3.28 3.28
+    vertex  1.67 3.28 1.64
+  endloop
+endfacet
+facet normal  0 0 -1
+  outer loop
+    vertex  3.34 0 0
+    vertex  0 0 0
+    vertex  1.67 1.64 0
+  endloop
+endfacet
+facet normal  0 0 -1
+  outer loop
+    vertex  0 0 0
+    vertex  0 3.28 0
+    vertex  1.67 1.64 0
+  endloop
+endfacet
+facet normal  0 0 -1
+  outer loop
+    vertex  0 3.28 0
+    vertex  3.34 3.28 0
+    vertex  1.67 1.64 0
+  endloop
+endfacet
+facet normal  0 0 -1
+  outer loop
+    vertex  3.34 3.28 0
+    vertex  3.34 0 0
+    vertex  1.67 1.64 0
+  endloop
+endfacet
+endsolid
