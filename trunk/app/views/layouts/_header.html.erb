@@ -1,10 +1,90 @@
-        <!-- Start Header -->
-        <div class="page_container">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
-          <img src="/images/MakeOne_logo.jpg" />
-          <br/>
-          <div class="header_text">Open models. Open platform.</div>
-          <div class="login_link">login</div>
-          <br/>
-          <hr size=1 noshade>
+<head>
+
+<!--meta data starts-->
+<meta name="Title" content="<%=@page%>" />
+<meta name="rno" content="" />
+<meta name="content-owner" content="barkley@mitre.org" />
+<meta name="webmaster" content="barkley@mitre.org" />
+<meta name="description" content="Secure Parts Database for Additive Manufacturing" />
+<meta name="dc.title" content="Secure Parts Database for Additive Manufacturing" />
+<meta name="dc.format" content="" />
+<meta name="dc.date.modified" content="Nov 2009" />
+<meta name="dc.language" content="en" />
+<meta name="dc.publisher" content="The MITRE Corporation" />
+<meta name="dc.description" content="" />
+<meta name="dc.identifier" content="" />
+<meta name="original creator" content="barkley@mitre.org" />
+<!--meta data ends-->
+
+
+
+  <title>MakeOne</title>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="-1">
+
+  <!-- common javascript includes -->
+  <%= javascript_include_tag 'prototype' %>
+  <%= javascript_include_tag 'common' %>
+
+  <!-- adobe flash stuff -->
+  <%= javascript_include_tag 'AC_OETags.js' %>
+  <%= javascript_include_tag 'history.js' %>
+
+  <!-- stylesheets -->
+  <%= stylesheet_link_tag "common" %>
+
+  <!-- any custom javascript -->
+  <script language="JavaScript" type="text/JavaScript">
+  <!--
+
+  //-->
+  </script>
+
+</head>
+
+<body>
+
+
+
+
+
+
+  <div id="main">
+    <div id="header" class="basic">
+      <div class="site">
+        <div class="logo">
+          <a href="/home"><img alt="MakeOne" src="/images/MakeOne_logo_tag.png"/></a>
+        </div>
+      <div class="topsearch">
+        <ul class="nav logged_out nosearch">
+          <li <%= if @loc=="home" then 'class="selected"' end %>>
+            <a href="/home">Home</a>
+          </li>
+          <li <%= if @loc=="models" then 'class="selected"' end %>>
+            <a href="/models">Models</a>
+          </li>
+          <li <%= if @loc=="faq" then 'class="selected"' end %>>
+            <a href="/faq">Faq</a>
+          </li>
+          <li <%= if @loc=="contact" then 'class="selected"' end %>>
+            <a href="/contact">Contact</a>
+          </li>
+          <li <%= if @loc=="login" then 'class="selected"' end %>>
+            <a href="/login">Login</a>
+          </li>
+          <li>
+            <!-- spacer -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
         <!-- End Header -->

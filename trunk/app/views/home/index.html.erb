@@ -1,58 +1,92 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
-
-<!--meta data starts-->
-<meta name="Title" content="<%=@page%>" />
-<meta name="rno" content="" />
-<meta name="content-owner" content="barkley@mitre.org" />
-<meta name="webmaster" content="barkley@mitre.org" />
-<meta name="description" content="Secure Parts Database for Additive Manufacturing" />
-<meta name="dc.title" content="Secure Parts Database for Additive Manufacturing" />
-<meta name="dc.format" content="" />
-<meta name="dc.date.modified" content="Nov 2009" />
-<meta name="dc.language" content="en" />
-<meta name="dc.publisher" content="The MITRE Corporation" />
-<meta name="dc.description" content="" />
-<meta name="dc.identifier" content="" />
-<meta name="original creator" content="barkley@mitre.org" />
-<!--meta data ends-->
-
-
-
-  <title>MakeOne</title>
-
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <meta http-equiv="Expires" content="-1">
-
-  <%= javascript_include_tag 'prototype' %>
-  <%= javascript_include_tag 'common' %>
-  <%= javascript_include_tag 'scriptaculous' %>
-
-  <%= stylesheet_link_tag "common" %>
-
-  <script language="JavaScript" type="text/JavaScript">
-  <!--
-
-  //-->
-  </script>
-
-</head>
-
-<body>
 
 <!-- Start Global Header -->
   <%= render :partial => 'layouts/header' %>
 <!-- End Global Header -->
 
-TEST HOME/INDEX
+<div style="width: 600px; text-align: center;"> 
+<br/><br/><br/>
+<h3>Featured Model</h3>
 
-<!-- Start Global Footer -->
-  <%= render :partial => 'layouts/footer' %>
-<!-- End Global Footer -->
 
-</body>
-</html>
+<script language="JavaScript" type="text/javascript">
+<!--
+// Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
+var hasProductInstall = DetectFlashVer(6, 0, 65);
+
+// Version check based upon the values defined in globals
+var hasRequestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
+
+if ( hasProductInstall && !hasRequestedVersion ) {
+	// DO NOT MODIFY THE FOLLOWING FOUR LINES
+	// Location visited after installation is complete if installation is required
+	var MMPlayerType = (isIE == true) ? "ActiveX" : "PlugIn";
+	var MMredirectURL = window.location;
+    document.title = document.title.slice(0, 47) + " - Flash Player Installation";
+    var MMdoctitle = document.title;
+
+	AC_FL_RunContent(
+		"src", "playerProductInstall",
+		"FlashVars", "model=tetrahedron&MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle+"",
+		"width", "300",
+		"height", "300",
+		"align", "middle",
+		"id", "MakeOneViewer",
+		"quality", "high",
+		"bgcolor", "#ffffff",
+		"model", "tetrahedron",
+		"name", "MakeOneViewer",
+		"allowScriptAccess","sameDomain",
+		"type", "application/x-shockwave-flash",
+		"pluginspage", "http://www.adobe.com/go/getflashplayer"
+	);
+} else if (hasRequestedVersion) {
+	// if we've detected an acceptable version
+	// embed the Flash Content SWF when all tests are passed
+	AC_FL_RunContent(
+			"src", "MakeOneViewer",
+			"width", "300",
+			"height", "300",
+			"align", "middle",
+			"id", "MakeOneViewer",
+			"quality", "high",
+			"bgcolor", "#ffffff",
+			"model", "tetrahedron",
+			"FlashVars", "model=tetrahedron",
+			"name", "MakeOneViewer",
+			"allowScriptAccess","sameDomain",
+			"type", "application/x-shockwave-flash",
+			"pluginspage", "http://www.adobe.com/go/getflashplayer"
+	);
+  } else {  // flash is too old or we can't detect the plugin
+    var alternateContent = 'Alternate HTML content should be placed here. '
+  	+ 'This content requires the Adobe Flash Player. '
+   	+ '<a href=http://www.adobe.com/go/getflash/>Get Flash</a>';
+    document.write(alternateContent);  // insert non-flash content
+  }
+// -->
+</script>
+<noscript>
+  <object style="border: 1px solid gray;" 
+          classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+          id="MakeOneViewer" width="300" height="300"
+          codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+    <param name="movie" value="http://localhost:3000/MakeOneViewer.swf" />
+    <param name="quality" value="high" />
+    <param name="bgcolor" value="#ffffff" />
+    <param name="model" value="tetrahedron" />
+    <param name="FlashVars" value="model=tetrahedron" />
+    <param name="allowScriptAccess" value="sameDomain" />
+    <embed src="http://localhost:3000/MakeOneViewer.swf" quality="high" bgcolor="#ffffff"
+           width="300" height="300" name="MakeOneViewer" align="middle"
+           play="true"
+           loop="false"
+           quality="high"
+           allowScriptAccess="sameDomain"
+           type="application/x-shockwave-flash"
+           pluginspage="http://www.adobe.com/go/getflashplayer">
+    </embed>
+  </object>
+</noscript>
+
+</div>
+
