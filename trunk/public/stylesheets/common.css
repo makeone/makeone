@@ -1,10 +1,32 @@
 .formbox {
+  text-align: left;
   font-size: 16pt;
   font-family:helvetica,arial,freesans,clean,sans-serif;
   color: darkgray;
   border: 1px solid gray;
   width: 50%;
   padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spacer {
+  margin-left: 2.5em;
+  margin-right: 2.5em;
+}
+
+span.left {
+position: absolute;
+left: 0;
+}
+span.right {
+position: absolute;
+right: 0;
+}
+div.line {
+position: relative;
+text-align: center;
+width: 100%;
 }
 
 .score_notice_label {
@@ -37,6 +59,7 @@
   font-family:helvetica,arial,freesans,clean,sans-serif;
 /*  background-color: darkgray;
   color: #defbf7;*/
+  color: #f36a36;
   padding: 5px;
 }
 
@@ -127,7 +150,7 @@ display:inline-block;
 display:block;
 }
 a {
-color:#4183C4;
+color: #f36a36;
 text-decoration:none;
 }
 a:hover {

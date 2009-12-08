@@ -1,24 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
+
 
 <head>
 
-<!--meta data starts-->
-<meta name="Title" content="<%=@page%>" />
-<meta name="rno" content="" />
-<meta name="content-owner" content="barkley@mitre.org" />
-<meta name="webmaster" content="barkley@mitre.org" />
-<meta name="description" content="Secure Parts Database for Additive Manufacturing" />
-<meta name="dc.title" content="Secure Parts Database for Additive Manufacturing" />
-<meta name="dc.format" content="" />
-<meta name="dc.date.modified" content="Nov 2009" />
-<meta name="dc.language" content="en" />
-<meta name="dc.publisher" content="The MITRE Corporation" />
-<meta name="dc.description" content="" />
-<meta name="dc.identifier" content="" />
-<meta name="original creator" content="barkley@mitre.org" />
-<!--meta data ends-->
+  <!--meta data starts-->
+  <meta name="Title" content="<%=@page%>" />
+  <meta name="rno" content="" />
+  <meta name="content-owner" content="barkley@mitre.org" />
+  <meta name="webmaster" content="barkley@mitre.org" />
+  <meta name="description" content="Secure Parts Database for Additive Manufacturing" />
+  <meta name="dc.title" content="Secure Parts Database for Additive Manufacturing" />
+  <meta name="dc.format" content="" />
+  <meta name="dc.date.modified" content="Nov 2009" />
+  <meta name="dc.language" content="en" />
+  <meta name="dc.publisher" content="The MITRE Corporation" />
+  <meta name="dc.description" content="" />
+  <meta name="dc.identifier" content="" />
+  <meta name="original creator" content="barkley@mitre.org" />
+  <!--meta data ends-->
 
 
 
@@ -31,6 +32,10 @@
   <!-- common javascript includes -->
   <%= javascript_include_tag 'prototype' %>
   <%= javascript_include_tag 'common' %>
+
+  <!-- javascript for facebooker auth plugin -->
+  <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+
 
   <!-- adobe flash stuff -->
   <%= javascript_include_tag 'AC_OETags.js' %>
@@ -50,8 +55,9 @@
 
 <body>
 
-
-
+  <!-- facebooker auth --> 
+  <%= fb_connect_javascript_tag %>
+  <%= init_fb_connect "XFBML" %>
 
 
 

@@ -2,22 +2,33 @@
   <%= render :partial => 'layouts/header' %>
 <!-- End Global Header -->
 
-
+<br/><br/>
 <div class="formbox">
-<br/>
+
+  <div class="line">
+    <span class="right"><%= link_to "Register", :controller => "users", :action => "new"%></span>
+  </div>
+
+  <h1>Login</h1>
+
+
+  <br/>
  
-<% form_for @user_session, :url => user_session_path do |f| %>
-  <%= f.error_messages %>
-  <%= f.label :login %>
-  <%= f.text_field :login %><br />
-  <br />
-  <%= f.label :password %>
-  <%= f.password_field :password %><br />
-  <br />
-  <%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me %><br />
-  <br />
-  <%= f.submit "Login" %>
-<% end %>
+  <% form_for @user_session, :url => user_session_path do |f| %>
+    <%= f.error_messages %>
+    <%= f.label "Email or login" %><br/>
+    <%= f.text_field :login %><br />
+    <br />
+    <%= f.label :password %><br />
+    <%= f.password_field :password %><br />
+    <br />
+    <%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me %><br />
+    <br />
+    <%= f.submit "Login", :class => 'classy' %>
+
+    <%= authlogic_facebook_login_button %>
+
+  <% end %>
 
 </div>
 

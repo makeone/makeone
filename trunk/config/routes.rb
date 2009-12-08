@@ -43,8 +43,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
 
   map.connect '/login', :controller => "user_sessions", :action => "new"
+  map.connect '/logout', :controller => "user_sessions", :action => "destroy"
 
-
+  map.register '/register/:activation_code', :controller => 'activations', :action => 'new'
+  map.activate '/activate/:id', :controller => 'activations', :action => 'create'
+ 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

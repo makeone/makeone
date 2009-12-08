@@ -1,7 +1,20 @@
+<!-- Start Global Header -->
+  <%= render :partial => 'layouts/header' %>
+<!-- End Global Header -->
+
+
+<br/><br/>
+<div class="formbox">
 <h1>Register</h1>
  
 <% form_for @user, :url => account_path do |f| %>
   <%= f.error_messages %>
-  <%= render :partial => "form", :object => f %>
-  <%= f.submit "Register" %>
+  <%= render :partial => "form", :object => f %><br/>
+  <%= f.submit "Register", :class => 'classy' %>
 <% end %>
+
+</div>
+
+<!-- Start Global Footer -->
+  <%= render :partial => 'layouts/footer' %>
+<!-- End Global Footer -->

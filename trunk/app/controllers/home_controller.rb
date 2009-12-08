@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   def index
+    @loc = "home"
   end
 
 #  def forgot_password
