@@ -13,5 +13,20 @@ config.action_controller.consider_all_requests_local = true
 config.action_view.debug_rjs                         = true
 config.action_controller.perform_caching             = false
 
+
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+  :enable_starttls_auto => true,
+  :tls => true,
+  :address => "smtp.gmail.com", 
+  :port => 587,
+  :domain => "gmail.com",
+  :authentication => :plain,
+  :user_name => "makeone.notifier",
+  :password => "DK^38cR9er"
+}
+
 # Don't care if the mailer can't send
-config.action_mailer.raise_delivery_errors = false
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.perform_deliveries = true
+config.action_mailer.default_url_options = { :host => "localhost:3000" }
