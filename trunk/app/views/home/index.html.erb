@@ -3,9 +3,8 @@
   <%= render :partial => 'layouts/header' %>
 <!-- End Global Header -->
 
-<div style="width: 600px; text-align: center;"> 
-<br/><br/><br/>
-<h3>Featured Model</h3>
+<div style="width: 600px; text-align: center;" class="formbox"> 
+<h1 style="color: #f36a36">Featured Model</h1>
 
 
 <script language="JavaScript" type="text/javascript">
@@ -27,7 +26,7 @@ if ( hasProductInstall && !hasRequestedVersion ) {
 	AC_FL_RunContent(
 		"src", "playerProductInstall",
 		"FlashVars", "model=tetrahedron&MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle+"",
-		"width", "300",
+		"width", "500",
 		"height", "300",
 		"align", "middle",
 		"id", "MakeOneViewer",
@@ -44,7 +43,7 @@ if ( hasProductInstall && !hasRequestedVersion ) {
 	// embed the Flash Content SWF when all tests are passed
 	AC_FL_RunContent(
 			"src", "MakeOneViewer",
-			"width", "300",
+			"width", "500",
 			"height", "300",
 			"align", "middle",
 			"id", "MakeOneViewer",
@@ -68,7 +67,7 @@ if ( hasProductInstall && !hasRequestedVersion ) {
 <noscript>
   <object style="border: 1px solid gray;" 
           classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-          id="MakeOneViewer" width="300" height="300"
+          id="MakeOneViewer" width="500" height="300"
           codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
     <param name="movie" value="http://localhost:3000/MakeOneViewer.swf" />
     <param name="quality" value="high" />
@@ -77,7 +76,7 @@ if ( hasProductInstall && !hasRequestedVersion ) {
     <param name="FlashVars" value="model=tetrahedron" />
     <param name="allowScriptAccess" value="sameDomain" />
     <embed src="http://localhost:3000/MakeOneViewer.swf" quality="high" bgcolor="#ffffff"
-           width="300" height="300" name="MakeOneViewer" align="middle"
+           width="500" height="300" name="MakeOneViewer" align="middle"
            play="true"
            loop="false"
            quality="high"
@@ -87,6 +86,8 @@ if ( hasProductInstall && !hasRequestedVersion ) {
     </embed>
   </object>
 </noscript>
+<input id="print" class="classy" type="submit" value="Download" name="print">
+<input id="print" class="classy" type="submit" value="Print" name="print">
 
 </div>
 

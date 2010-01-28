@@ -82,7 +82,14 @@
             <a href="/contact">Contact</a>
           </li>
           <li <%= if @loc=="login" then 'class="selected"' end %>>
-            <a href="/login">Login</a>
+
+            <% if current_user %>
+<!--              <%= link_to "Edit Profile", edit_user_path(:current) %> -->
+              <a href="/logout">Logout</a>
+            <% else %>
+              <a href="/login">Login</a>
+            <% end %>
+
           </li>
           <li>
             <!-- spacer -->
@@ -91,6 +98,10 @@
       </div>
     </div>
   </div>
+
+<% if flash[:notice] -%>
+<div id="notice" class="notice" style="font-size: 1.5em"><%= flash[:notice] %></div>
+<% end %>
 
 
         <!-- End Header -->
