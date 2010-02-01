@@ -3,6 +3,7 @@
 development:
   adapter: mysql
   database: makeone
+  username: root
   pool: 5
   timeout: 5000
 
@@ -12,11 +13,13 @@ development:
 test:
   adapter: mysql
   database: makeone
+  username: root
   pool: 5
   timeout: 5000
 
 production:
   adapter: mysql
   database: makeone
+  username: root
   pool: 5
   timeout: 5000

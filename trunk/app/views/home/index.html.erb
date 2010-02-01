@@ -2,10 +2,16 @@
 <!-- Start Global Header -->
   <%= render :partial => 'layouts/header' %>
 <!-- End Global Header -->
+<br/><br/>
+<h2>
+MakeOne is an open source architecture dedicated to one-click printing of 3-dimensional computer models to a 3D printer or Additive Manufacturing device in order to create a physical version of the model.
+</h2>
+<br/><br/>
 
-<div style="width: 600px; text-align: center;" class="formbox"> 
-<h1 style="color: #f36a36">Featured Model</h1>
+<div style="width: 600px; text-align: left;" class="formbox"> 
+<h1>Featured Model</h1>
 
+<!-- <h2>|<%= @feature %>|</h2> -->
 
 <script language="JavaScript" type="text/javascript">
 <!--
@@ -86,8 +92,10 @@ if ( hasProductInstall && !hasRequestedVersion ) {
     </embed>
   </object>
 </noscript>
-<input id="print" class="classy" type="submit" value="Download" name="print">
-<input id="print" class="classy" type="submit" value="Print" name="print">
+<br/>
+<br/>
+<input id="download" class="classy" type="submit" value="Download" name="download" onclick="download()">
+<input id="print" class="classy unclickable" type="submit" value="Print" name="print" disabled>
 
 </div>
 

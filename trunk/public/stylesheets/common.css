@@ -13,15 +13,16 @@
   font-size: 16pt;
   font-family:helvetica,arial,freesans,clean,sans-serif;
   color: darkgray;
-/*  border: 1px solid gray; */
   width: 50%;
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
-/*
-  border-style: double; 
-  border-color: #f36a36;
-*/
+  /* border: 1px solid #f36a36; */
+  border: 10px solid lightgray; 
+  border-radius: 15px;  
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+
 }
 
 .spacer {
@@ -71,10 +72,13 @@ width: 100%;
 .classy {
   font-size: 16pt;
   font-family:helvetica,arial,freesans,clean,sans-serif;
-/*  background-color: darkgray;
-  color: #defbf7;*/
-  color: #f36a36;
+/*  background-color: darkgray; */
+/*  color: #defbf7; */
+/*  color: #f36a36; */
+  color: #C35617;
   padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 td {
@@ -212,8 +216,9 @@ color:#FFFFFF;
 text-decoration:none;
 }
 #header .logo {
-float:left;
-padding-top:22px;
+  float: left;
+  padding-top:22px;
+  padding-left: 8px;
 }
 #header .actions {
 color:#444444;
@@ -301,10 +306,10 @@ background-color:#4183C4;
 color:#FFFFFF;
 }
 .topsearch {
-clear:right;
-float:right;
-margin-top:15px;
-width:500px;
+  clear:right;
+  float:right;
+  margin-top:45px;
+  width:500px;
 }
 .topsearch form, .topsearch ul.nav {
 float:right;
@@ -372,8 +377,38 @@ color:#666666;
 font-weight:normal;
 }
 #header ul.nav.logged_out li.selected a {
-color:#333333; 
-/*color: #f36a36;*/
+/* color:#333333; */
+color: #f36a36;
 font-weight:bold;
 }
 
+/*
+.unclickable {
+ font-weight: bold;
+ color: lightgray;
+
+}
+*/
+
+input[disabled] {
+  color: #c0c0c0;
+  border: 1px solid #999;
+  background-color: #ddd;
+  border-radius: 3px;  
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.main {
+
+}
+
+.main h2 {
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  font-size: 14pt;
+  font-family:helvetica,arial,freesans,clean,sans-serif;
+  color: gray;
+}
