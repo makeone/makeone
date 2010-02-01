@@ -22,7 +22,14 @@
   border-radius: 15px;  
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
+}
 
+.formbox a {
+  color: #f36a36;
+}
+
+.formbox a:visited {
+  color: gray;
 }
 
 .spacer {
@@ -168,11 +175,12 @@ display:inline-block;
 display:block;
 }
 a {
-color: #f36a36;
+/*color: #f36a36;*/
+color: gray;
 text-decoration:none;
 }
 a:hover {
-text-decoration:underline;
+/*text-decoration:underline;*/
 }
 .usingMouse a {
 outline-color:-moz-use-text-color;
@@ -200,9 +208,9 @@ clear:both;
 }
 
 #header {
-background:#FCFCFC url(/images/header_bg.png) repeat-x scroll 0 100%;
-border-bottom:5px solid #DDDDDD;
-/* border-bottom:5px solid #E78A61; */
+background:#FCFCFC url('/images/header_bg.png') repeat-x scroll 0 100%;
+/* border-bottom:5px solid #DDDDDD; */
+border-bottom:5px solid #E78A61; 
 height:90px;
 margin-bottom:15px;
 min-width:950px;
@@ -308,7 +316,7 @@ color:#FFFFFF;
 .topsearch {
   clear:right;
   float:right;
-  margin-top:45px;
+  margin-top:42px;
   width:500px;
 }
 .topsearch form, .topsearch ul.nav {
@@ -345,18 +353,20 @@ width:149px;
 background-position:0 0;
 }
 ul.nav {
-margin:1px 0 0;
-white-space:nowrap;
+  margin:1px 0 0;
+  white-space:nowrap;
 }
 ul.nav li {
 display:inline;
-font-size:12px;
+font-size:14px;
 list-style-type:none;
 margin:0 15px 0 0;
 }
 #header ul.nav li a {
-color:#4183C4;
-font-weight:bold;
+  color:#4183C4;
+  font-weight:bold;
+  font-size: 14pt;
+  font-family:helvetica,arial,freesans,clean,sans-serif;
 }
 #header ul.nav li a:hover {
 text-decoration:underline;
@@ -411,4 +421,31 @@ input[disabled] {
   font-size: 14pt;
   font-family:helvetica,arial,freesans,clean,sans-serif;
   color: gray;
+}
+
+.question {
+/*  border-top: 1px dotted #ccc; */
+  border-top: 1px dotted #f36a36; 
+  margin-top:5em;
+  padding-top: 10px;
+}
+
+.question a {
+  /* color: #f36a36; */
+  color: gray;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.answer {
+  /* color: #f36a36; */
+  color: gray;
+  font-size: 12pt;
+  padding-left: 5em;
+}
+
+.answer a {
+  /* color: #f36a36; */
+  color: gray;
+  font-size: 12pt;
 }
