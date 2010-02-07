@@ -71,6 +71,13 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string "country",     :limit => 45
   end
 
+  create_table "composite_structures", :id => false, :force => true do |t|
+    t.integer "id",        :null => false
+    t.integer "system_id", :null => false
+  end
+
+  add_index "composite_structures", ["system_id"], :name => "fk_composite_structures_system1"
+
   create_table "digital_test_methods", :force => true do |t|
     t.string "name",                :limit => 45
     t.string "description"
@@ -113,42 +120,49 @@ ActiveRecord::Schema.define(:version => 0) do
   create_table "formats", :force => true do |t|
     t.string  "name",        :limit => 45
     t.string  "description"
-    t.boolean "binary"
+    t.boolean "is_binary"
     t.string  "version",     :limit => 45
     t.string  "spec_url"
+    t.string  "extension",   :limit => 5
   end
 
   create_table "intended_uses", :force => true do |t|
     t.integer "property_id", :null => false
   end
 
+  create_table "licenses", :force => true do |t|
+  end
+
   create_table "machines", :force => true do |t|
-    t.integer "am_technology_id",                       :null => false
-    t.integer "company_id",                             :null => false
-    t.string  "model",                    :limit => 45
+    t.integer "am_technology_id",                     :null => false
+    t.integer "company_id",                           :null => false
+    t.string  "model_name",             :limit => 45
     t.string  "description"
     t.string  "build_technique"
     t.integer "build_height"
     t.integer "build_width"
     t.integer "build_depth"
-    t.string  "build volume",             :limit => 45
+    t.string  "build_volume",           :limit => 45
     t.integer "height"
     t.integer "width"
     t.integer "depth"
-    t.string  "volume",                   :limit => 45
+    t.string  "volume",                 :limit => 45
     t.integer "weight"
-    t.string  "energy_source",            :limit => 45
-    t.string  "cost x 1,000",             :limit => 10
-    t.string  "maintenance_cost x 1,000", :limit => 10
+    t.string  "energy_source",          :limit => 45
+    t.string  "cost_x1000",             :limit => 10
+    t.string  "maintenance_cost_x1000", :limit => 10
   end
 
   add_index "machines", ["am_technology_id"], :name => "fk_machines_am_technologies1"
   add_index "machines", ["company_id"], :name => "fk_machines_companies1"
 
-  create_table "machines_calibrations", :primary_key => "calibration_id", :force => true do |t|
+  create_table "machines_calibrations", :id => false, :force => true do |t|
+    t.integer "calibration_id", :null => false
+    t.integer "machines_id",    :null => false
   end
 
   add_index "machines_calibrations", ["calibration_id"], :name => "fk_machines_has_calibrations_calibrations1"
+  add_index "machines_calibrations", ["machines_id"], :name => "fk_machines_calibrations_machines1"
 
   create_table "machines_materials", :id => false, :force => true do |t|
     t.integer "materials_id", :null => false
@@ -225,16 +239,25 @@ ActiveRecord::Schema.define(:version => 0) do
   end
 
   create_table "models", :force => true do |t|
-    t.integer "cad_cam_software_id",               :null => false
-    t.integer "scanner_id",                        :null => false
-    t.integer "user_id",                           :null => false
-    t.integer "format_id",                         :null => false
-    t.string  "name",                :limit => 45
+    t.integer "cad_cam_software_id",                          :null => false
+    t.integer "scanner_id",                                   :null => false
+    t.integer "user_id",                                      :null => false
+    t.integer "format_id",                                    :null => false
+    t.string  "name",                           :limit => 45
     t.string  "description"
+    t.string  "hash",                                         :null => false
+    t.integer "version"
+    t.text    "intended_use"
+    t.text    "post_processing_recomendations"
+    t.integer "licenses_id",                                  :null => false
+    t.integer "recomended_material_id",                       :null => false
+    t.integer "recomended_printer"
   end
 
   add_index "models", ["cad_cam_software_id"], :name => "fk_models_cad_cam_software1"
   add_index "models", ["format_id"], :name => "fk_models_formats1"
+  add_index "models", ["licenses_id"], :name => "fk_models_licenses1"
+  add_index "models", ["recomended_material_id"], :name => "fk_models_materials1"
   add_index "models", ["scanner_id"], :name => "fk_models_scanners1"
   add_index "models", ["user_id"], :name => "fk_models_users1"
 
