@@ -55,5 +55,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:name.:format', :action => "show"
 
   map.resources :models 
+  map.resources :machines 
+  map.resources :materials 
 
 end

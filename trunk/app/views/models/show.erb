@@ -1,91 +1,40 @@
-<solid>
-  <name>cube_corner</name>
-    <facet>
-      <normal>
-        <x>0.0</x>
-        <y>-1.0</y>
-        <z>0.0</z>
-      </normal>
-        <vertex>
-          <x>0.0</x>
-          <y>0.0</y>
-          <z>0.0</z>
-        </vertex>
-        <vertex>
-          <x>1.0</x>
-          <y>0.0</y>
-          <z>0.0</z>
-        </vertex>
-        <vertex>
-          <x>0.0</x>
-          <y>0.0</y>
-          <z>1.0</z>
-        </vertex>
-    </facet>
-    <facet>
-      <normal>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>-1.0</z>
-      </normal>
-        <vertex>
-          <x>0.0</x>
-          <y>0.0</y>
-          <z>0.0</z>
-        </vertex>
-        <vertex>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
-        </vertex>
-        <vertex>
-          <x>1.0</x>
-          <y>0.0</y>
-          <z>0.0</z>
-        </vertex>
-    </facet>
-    <facet>
-      <normal>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>-1.0</z>
-      </normal>
-        <vertex>
-          <x>0.0</x>
-          <y>0.0</y>
-          <z>0.0</z>
-        </vertex>
-        <vertex>
-          <x>0.0</x>
-          <y>0.0</y>
-          <z>1.0</z>
-        </vertex>
-        <vertex>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
-        </vertex>
-    </facet>
-    <facet>
-      <normal>
-        <x>0.577</x>
-        <y>0.577</y>
-        <z>0.577</z>
-      </normal>
-        <vertex>
-          <x>1.0</x>
-          <y>0.0</y>
-          <z>0.0</z>
-        </vertex>
-        <vertex>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
-        </vertex>
-        <vertex>
-          <x>0.0</x>
-          <y>0.0</y>
-          <z>1.0</z>
-        </vertex>
-    </facet>
-</solid>
+<%=
+  @data = String.new
+  File.open("app/views/models/tetrahedron.stl") do |file|
+    while curline = file.gets
+# this only works for straight xml files
+#      @cur += content.to_s
+
+      unless curline.empty?
+        curline = curline.strip().downcase()
+        curline = curline.gsub(/;.*\n/, '')
+        if curline.match(/^solid/)
+          arr = curline.split(/\s/, 2)
+          name = arr[1].gsub(/"/, '') #name.gsub(/"/''/) ruby seems to autostrip quotes - I should make it explicit soon
+          @data += "<name>" + name.gsub(/;.*/,'') + "</name>"
+        elsif curline.match(/^facet/)
+          @data += "<facet><normal>"
+          arr = curline.split(/\s+/, 5)
+          @data += "<x>" + arr[2].gsub(/;.*/,'') + "</x><y>" + arr[3].gsub(/;.*/,'') + "</y><z>" + arr[4].gsub(/;.*/,'') + "</z>"
+          @data += "</normal>" 
+        elsif curline.match(/^vertex/)
+          @data += "<vertex>"
+          arr = curline.split(/\s+/, 4)
+          @data += "<x>" + arr[1].gsub(/;.*/,'') + "</x><y>" + arr[2].gsub(/;.*/,'') + "</y><z>" + arr[3].gsub(/;.*/,'') + "</z>"
+          @data += "</vertex>" 
+        elsif curline.match(/^outerloop/) #ignore
+        elsif curline.match(/^endloop/)   #ignore 
+        elsif curline.match(/^endfacet/)  #ignore 
+          @data += "</facet>"
+        elsif curline.match(/^endsolid/)  #ignore 
+        else
+        end
+
+      end 
+    end
+  end
+%>
+
+<%= 
+@final = "<solid>" + @data.gsub(/;.*\n/, '') + "</solid>"
+%>

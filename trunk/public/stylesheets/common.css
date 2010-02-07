@@ -24,6 +24,30 @@
   -webkit-border-radius: 15px;
 }
 
+.rowbox {
+  text-align: left;
+  font-size: 16pt;
+  font-family:helvetica,arial,freesans,clean,sans-serif;
+  color: #f36a36;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 1px solid #f36a36; */
+  /* border-top: 1px solid lightgray; */
+  border-top: 1px dotted #f36a36; 
+  padding: 10px;
+}
+
+div.rowbox h2 {
+  color: #f36a36;
+  font-size: 16pt;
+  font-family:helvetica,arial,freesans,clean,sans-serif;
+}
+
+
+.rowbox h2 {
+  color: #f36a36;
+}
+
 .formbox a {
   color: #f36a36;
 }
@@ -38,13 +62,32 @@
 }
 
 span.left {
-position: absolute;
-left: 0;
+  position: absolute;
+  left: 0;
 }
 span.right {
-position: absolute;
-right: 0;
+  position: absolute;
+  right: 0;
 }
+span.right a:link {
+  position: absolute;
+  right: 0;
+  color: #f36a36;
+}
+span.right a:visited {
+  position: absolute;
+  right: 0;
+  color: #f36a36;
+}
+
+span.right a:hover {
+  position: absolute;
+  right: 0;
+  color: #f36a36;
+  text-decoration:underline;
+}
+
+
 div.line {
 position: relative;
 text-align: center;
@@ -195,8 +238,38 @@ text-decoration:underline;
 float:right;
 }
 .left {
-float:left;
+  float:left;
 }
+.left_col {
+  float:left;
+  font-size: 12pt;
+  font-family:helvetica,arial,freesans,clean,sans-serif;
+  color: #f36a36; 
+  padding: 20px;
+  margin-left: 2.0em;
+  margin-right: auto;
+}
+
+.breadcrumbs {
+  position: absolute;
+  left: 195px;
+  top: 95px;
+  font-size: 12pt;
+  font-family:helvetica,arial,freesans,clean,sans-serif;
+  color: #f36a36; 
+}
+
+.right_col {
+  float:right;
+  font-size: 12pt;
+  font-family:helvetica,arial,freesans,clean,sans-serif;
+  color: #f36a36; 
+  padding: 20px;
+  margin-left: 2.0em;
+  margin-right: auto;
+}
+
+
 .hidden {
 display:none;
 }
@@ -413,6 +486,10 @@ input[disabled] {
 
 }
 
+.formbox h2 {
+  color: red;
+}
+
 .main h2 {
   padding: 20px;
   margin-left: auto;
@@ -421,6 +498,15 @@ input[disabled] {
   font-size: 14pt;
   font-family:helvetica,arial,freesans,clean,sans-serif;
   color: gray;
+}
+
+.main h2 a {
+  color: #f36a36;
+}
+
+.main h2 a:hover {
+  color: #f36a36;
+  text-decoration:underline;
 }
 
 .question {

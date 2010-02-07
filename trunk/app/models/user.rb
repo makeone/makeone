@@ -1,6 +1,7 @@
 #some of this came from http://www.claytoniz.com/index.php/2009/07/authlogic-account-activation-tutorial/
 
 class User < ActiveRecord::Base
+  has_many :models
   acts_as_authentic do |c|
     c.validates_length_of_password_field_options = {:on => :update, :minimum => 6, :if => :has_no_credentials?}
     c.validates_length_of_password_confirmation_field_options = {:on => :update, :minimum => 6, :if => :has_no_credentials?}
