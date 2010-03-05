@@ -54,8 +54,6 @@ Rails::Initializer.run do |config|
 #    :port           => '587',
 #    :domain         => 'localhost.localdomain',
 #    :authentication => :plain,
-#    :user_name      => 'james.barkley',
-#    :password       => 'Wasabi04'
 #}
 
 

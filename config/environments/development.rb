@@ -22,8 +22,6 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   :domain => "gmail.com",
   :authentication => :plain,
-  :user_name => "makeone.notifier",
-  :password => "DK^38cR9er"
 }
 
 # Don't care if the mailer can't send
